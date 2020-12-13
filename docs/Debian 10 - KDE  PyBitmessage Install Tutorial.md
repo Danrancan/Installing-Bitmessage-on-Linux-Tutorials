@@ -19,10 +19,10 @@ sudo apt update && sudo apt install -y apt-file && sudo apt-file update && sudo 
 ## Step 2
 Clone the Official Bitmessage Repo to your home directory (or whatever directory you want to store your bitmessage repo in).
 ```
-git clone https://github.com/Bitmessage/PyBitmessage $HOME/PyBitmessage
+git clone https://github.com/Bitmessage/$HOME/PyBitmessage
 ```
 ## Step 3
-Move into your cloned PyBitmessage directory, and verify that you have all the required dependencies.
+Move into your cloned [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) directory, and verify that you have all the required dependencies.
 ```
 cd $HOME/PyBitmessage/ && python checkdeps.py
 ```
@@ -70,17 +70,17 @@ Copy and paste the uncommented (indicated by a line that doesn't start with #) c
 Go to your home folder home folder
 Install apt-file (incase you need to find some extra packages)
 Install your dependancies 
-Clone the official PyBitmessage repository
-Move into the PyBitmessage cloned directory
+Clone the official [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) repository
+Move into the [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) cloned directory
 Check if you still have any missing dependancies.
 Install bitmessage as a user
-Add the PyBitmessage directory to your $PATH 
-Create a simple bash script that updates PyBitmessage & starts PyBitmessage everytime you open it.
+Add the [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) directory to your $PATH 
+Create a simple bash script that updates [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) & starts [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) everytime you open it.
 Name the generated bitmessage script to "_bitmessage_", 
-Make the generated bitmessage script executable (chmod a+x) 
-Add the installed PyBitmessage binary directory ($HOME/.local/bin} to your $PATH. 
+Make the generated bitmessage script executable with ```chmod a+x``` 
+Add the installed pybitmessage binary directory ($HOME/.local/bin} to your $PATH. 
 ```
-cd $HOME && sudo apt update && sudo apt install -y apt-file && sudo apt-file update && sudo apt install -y python python-pip/stable python-msgpack python-qt4 python-pyopencl python-setuptools python-prctl openssl libssl-dev git libcap-dev libcanberra-gtk-module/stable python-notify python-notify2 libmessaging-menu-dev build-essential --reinstall && git clone https://github.com/Bitmessage/PyBitmessage $HOME/PyBitmessage && cd ~/PyBitmessage && python $HOME/PyBitmessage/checkdeps.py && python $HOME/PyBitmessage/setup.py install --user && export PATH="${PATH:+${PATH}:}~/.local/bin" && source ~/.profile && echo '#!/bin/bash' | cat >> $HOME/.local/bin/bitmessage && echo "# This is an automatically generated script to update and start bitmessage when you type the word "bitmessage" on the command line" | cat >> $HOME/.local/bin/bitmessage && echo "export TMPHOME=$PWD" | cat >> $HOME/.local/bin/bitmessage && echo "cd $HOME/PyBitmessage/ && git pull" | cat >> $HOME/.local/bin/bitmessage && echo "cd $TMPHOME" | cat >> $HOME/.local/bin/bitmessage && echo "$HOME/.local/bin/PyBitmessage" | cat >> $HOME/.local/bin/bitmessage && chmod a+x $HOME/.local/bin/bitmessage
+cd $HOME && sudo apt update && sudo apt install -y apt-file && sudo apt-file update && sudo apt install -y python python-pip/stable python-msgpack python-qt4 python-pyopencl python-setuptools python-prctl openssl libssl-dev git libcap-dev libcanberra-gtk-module/stable python-notify python-notify2 libmessaging-menu-dev build-essential --reinstall && git clone https://github.com/Bitmessage/PyBitmessage $HOME/PyBitmessage && cd ~/PyBitmessage && python $HOME/PyBitmessage/checkdeps.py && python $HOME/PyBitmessage/setup.py install --user && export PATH="${PATH:+${PATH}:}~/.local/bin" && source ~/.profile && echo '#!/bin/bash' | cat >> $HOME/.local/bin/bitmessage && echo "# This is an automatically generated script to update and start bitmessage when you type the word "bitmessage" on the command line" | cat >> $HOME/.local/bin/bitmessage && echo "export TMPHOME=$PWD" | cat >> $HOME/.local/bin/bitmessage && echo "cd $HOME/PyBitmessage/ && git pull" | cat >> $HOME/.local/bin/bitmessage && echo "cd $TMPHOME" | cat >> $HOME/.local/bin/bitmessage && echo "$HOME/.local/bin/pybitmessage" | cat >> $HOME/.local/bin/bitmessage && chmod a+x $HOME/.local/bin/bitmessage
 ```
 ## Step 10)
 Activate bitmessage 
