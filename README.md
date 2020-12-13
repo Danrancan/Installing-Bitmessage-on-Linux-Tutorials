@@ -10,6 +10,8 @@ To install Bitmessage properly, you have two options:
 1) You may follow a tutorial that has been written for your specific version of Linux, or
 2) you may use my automated install bash scripts that I have created to expedite the installation of PyBitmessage from source on your linux distribution. You will not have to do much manual work if you use the automated install scripts.
 
+The Docs folder has both the scripts as well as the tutorials that you will need for each distribution.
+
 Feel Free to contact me with any questions.
 
 Danrancan
