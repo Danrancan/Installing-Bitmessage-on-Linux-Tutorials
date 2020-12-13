@@ -13,5 +13,7 @@ To install Bitmessage properly, you have two options:
 Feel Free to contact me with any questions.
 
 Danrancan
+
 dan@nerd-tech.net
+
 https://www.nerd-tech.net
