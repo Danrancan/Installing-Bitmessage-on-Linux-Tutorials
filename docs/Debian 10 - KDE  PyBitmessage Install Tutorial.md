@@ -1,8 +1,7 @@
-## Welcome to GitHub Pages
+# Properly Installing Bitmessage on Debian 10 KDE
+##### A tutorial provided by [Nerd-Tech.net](https://www.nerd-tech.net) 
 
-You can use the [editor on GitHub](https://github.com/Danrancan/Installing-Bitmessage-on-Linux-Tutorials/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This tutorial will help you properly install [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) with all dependencies on a cleanly installed Debian 10 KDE distribution. It requires the use of your terminal application. First read the instructions for each step, then copy and paste each command below the instructions into your terminal and press enter.
 
 ### Markdown
 
@@ -35,3 +34,25 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+# Installing Bitmessage and all dependencies on a Debian 10 KDE clean install
+# Copy and paste the uncommented (indicated by a line that doesnt start with #) commands into your terminal.
+
+# 1) Install your dependancies, as well as apt-file, incase you need to find some extra packagesand,
+# then clone the official PyBitmessage repository, and move into that directory, then check if you still have any missing dependancies.
+
+# Below is a single one-liner to do all of this for you. Copy & Paste it into terminal.
+cd $HOME && sudo apt update && sudo apt install -y apt-file && sudo apt-file update && sudo apt install -y python python-pip/stable python-msgpack python-qt4 python-pyopencl python-setuptools python-prctl openssl libssl-dev git libcap-dev libcanberra-gtk-module/stable python-notify python-notify2 libmessaging-menu-dev --reinstall && git clone https://github.com/Bitmessage/PyBitmessage $HOME/PyBitmessage && cd $HOME/PyBitmessage/ && python $HOME/PyBitmessage/checkdeps.py
+
+# 2) Install bitmessage as a user, add the PyBitmessage directory to your $PATH, and finally, create a simple bash script that updates & starts bitmessage everytime you open it.
+# Rename the auto-generated bitmessage script to, "bitmessage", make it executable (chmod a+x), then add the installed PyBitmessage binary directory ($HOME/.local/bin} to your $PATH. 
+
+#Below is a single one-liner to do all of this for you. Copy & Paste it into terminal.
+python $HOME/PyBitmessage/setup.py install --user && export PATH="${PATH:+${PATH}:}~/.local/bin" && echo '#!/bin/bash' | cat >> $HOME/.local/bin/bitmessage && echo "# This is an automatically generated script to update and start bitmessage when you type the word "bitmessage" on the command line" | cat >> $HOME/.local/bin/bitmessage && echo "export TMPHOME=$PWD" | cat >> $HOME/.local/bin/bitmessage && echo "cd $HOME/PyBitmessage/ && git pull" | cat >> $HOME/.local/bin/bitmessage && echo "cd $TMPHOME" | cat >> $HOME/.local/bin/bitmessage && echo "$HOME/.local/bin/pybitmessage" | cat >> $HOME/.local/bin/bitmessage && chmod a+x $HOME/.local/bin/bitmessage
+
+
+# PyBitmessage should be installed successfully into your user account.
+# Run and activate bitmessage by typing in your terminal "bitmessage" without the quotations.
+bitmessage
+
+# Now bitmessage should be up and running. All done.
