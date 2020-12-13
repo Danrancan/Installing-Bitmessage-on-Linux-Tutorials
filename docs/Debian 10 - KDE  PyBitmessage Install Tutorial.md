@@ -3,9 +3,11 @@
 
 This tutorial will help you properly install [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) with all dependencies on a cleanly installed Debian 10 KDE distribution. It requires the use of your terminal application. First read the instructions for each step, then copy and paste each command below the instructions into your terminal and press enter.
 
-### Markdown
+### IMPORTANT: Skip to the last step for the fast way of doing this with a single command.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Step 1
+
+Install your dependancies, as well as "apt-file" (for the apt-file search command), incase you need to find some extra packages.
 
 ```markdown
 Syntax highlighted code block
@@ -24,6 +26,10 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
+
+### Step 2
+Clone the official PyBitmessage repository, and move into that directory, then check if you still have any missing dependancies.
+
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
