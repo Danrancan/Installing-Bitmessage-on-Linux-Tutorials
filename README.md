@@ -1,6 +1,6 @@
 ### Installing-Bitmessage-on-Linux-Tutorials  
 ## December, 2020
-#### All the Documents you need to install are located in the Danrancan/Installing-Bitmessage-on-Linux-Tutorials/Docs folder
+#### All the Documents you need to install are located in the [Docs folder](https://github.com/Danrancan/Installing-Bitmessage-on-Linux-Tutorials/tree/main/docs)
 
 
 The developers of PyBitmessage are excellent at programming, but lack the time for proper documentation and tutorials. This is my attempt to help end users install and try out the experimental messaging protocol known as PyBitmessage, on several cleanly installed Debian based Linux Distributions.  In this Project you will find tutorials on how to properly install and run PyBitmessage, on your debian based distribution. 
