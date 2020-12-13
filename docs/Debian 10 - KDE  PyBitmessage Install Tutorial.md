@@ -18,10 +18,15 @@ Clone the Official Bitmessage Repo to your home directory (or whatever directory
 git clone https://github.com/Bitmessage/PyBitmessage $HOME/PyBitmessage
 ```
 ## Step 3
-Verify that you have all the required dependencies.
+Move into your cloned PyBitmessage directory, and verify that you have all the required dependencies.
 ```
-python $HOME/PyBitmessage/checkdeps.py
+cd $HOME/PyBitmessage/ && python checkdeps.py
 ```
+If you see the message _"***cc1plus***: ***warning***: command line option ‘ ***-Wstrict-prototypes***’ is valid for C/ObjC but not for C++"_
+then ignore it.
+
+If you see the message _"Optional dependency \`pip install .[prctl]\` would require \`apt-get install libcap-dev python-prctl\` to be run as root"_
+then ignore it.
 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
