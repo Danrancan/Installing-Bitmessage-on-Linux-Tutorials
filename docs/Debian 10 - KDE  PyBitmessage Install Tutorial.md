@@ -28,12 +28,29 @@ then ignore it.
 If you see the message _"Optional dependency \`pip install .[prctl]\` would require \`apt-get install libcap-dev python-prctl\` to be run as root"_
 then ignore it.
 
+If you see any missing dependancies other than the above two issues, search for and download them with ```sudo apt-file search missing-dependancy``` or with ```sudo apt file search missing-dependency```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Step 3
+Install bitmessage as a user so you dont need, and it doesn't use root permissions. It is more secure this way.
+```
+setup.py install --user
+```
+## Step 4
+Add the PyBitmessage directory to your $PATH and source ~/.profile
+```
+export PATH="${PATH:+${PATH}:}~/.local/bin" && source ~/.profile
+```
+## Step 5
+Create a bash script that starts PyBitmessage with the command "bitmessage" automatically and checks for updates before load time 
+```
+echo '#!/bin/bash' | cat >> $HOME/.local/bin/bitmessage && echo "# This is an automatically generated script to update and start bitmessage when you type the word "bitmessage" on the command line" | cat >> $HOME/.local/bin/bitmessage && echo "export TMPHOME=$PWD" | cat >> $HOME/.local/bin/bitmessage && echo "cd $HOME/PyBitmessage/ && git pull" | cat >> $HOME/.local/bin/bitmessage && echo "cd $TMPHOME" | cat >> $HOME/.local/bin/bitmessage && echo "$HOME/.local/bin/pybitmessage" | cat >> $HOME/.local/bin/bitmessage
+```
+## Step 6
+Give your newly created bash script execute permissions
+```
+chmod a+x $HOME/.local/bin/bitmessage
+```
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Danrancan/Installing-Bitmessage-on-Linux-Tutorials/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
@@ -49,6 +66,7 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 cd $HOME && sudo apt update && sudo apt install -y apt-file && sudo apt-file update && sudo apt install -y python python-pip/stable python-msgpack python-qt4 python-pyopencl python-setuptools python-prctl openssl libssl-dev git libcap-dev libcanberra-gtk-module/stable python-notify python-notify2 libmessaging-menu-dev --reinstall && git clone https://github.com/Bitmessage/PyBitmessage $HOME/PyBitmessage && cd $HOME/PyBitmessage/ && python $HOME/PyBitmessage/checkdeps.py
 
 # 2) Install bitmessage as a user, add the PyBitmessage directory to your $PATH, and finally, create a simple bash script that updates & starts bitmessage everytime you open it.
+
 # Rename the auto-generated bitmessage script to, "bitmessage", make it executable (chmod a+x), then add the installed PyBitmessage binary directory ($HOME/.local/bin} to your $PATH. 
 
 #Below is a single one-liner to do all of this for you. Copy & Paste it into terminal.
