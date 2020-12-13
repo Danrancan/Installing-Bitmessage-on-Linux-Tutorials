@@ -3,6 +3,9 @@
 
 This tutorial will help you properly install [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) with all dependencies on a cleanly installed Debian 10 KDE distribution. It requires the use of your terminal application. First read the instructions for each step, then copy and paste each command below the instructions into your terminal and press enter.
 
+To install Bitmessage and all dependencies on a Debian 10 KDE clean install
+Copy and paste the uncommented (indicated by a line that doesn't start with #) commands into your terminal.
+
 #### 1-7 "The Long Way" 
 #### (Skip to step 8-10 for "The Short Way")
 
@@ -58,32 +61,26 @@ bitmessage
 ```
 ## Done!
 
-##### "The Short Way"
-# Installing Bitmessage and all dependencies on a Debian 10 KDE clean install
-# Copy and paste the uncommented (indicated by a line that doesnt start with #) commands into your terminal.
+#### "The Short Way"
+To install Bitmessage and all dependencies on a Debian 10 KDE clean install
+Copy and paste the uncommented (indicated by a line that doesn't start with #) commands into your terminal.
 
-## Step 8)
-Below is a one-liner to:
+## Step 9) 
+## Below is a one-liner to Install everything by doing the following:
 Go to your home folder home folder
 Install apt-file (incase you need to find some extra packages)
 Install your dependancies 
 Clone the official PyBitmessage repository
 Move into the PyBitmessage cloned directory
 Check if you still have any missing dependancies.
-```
-cd $HOME && sudo apt update && sudo apt install -y apt-file && sudo apt-file update && sudo apt install -y python python-pip/stable python-msgpack python-qt4 python-pyopencl python-setuptools python-prctl openssl libssl-dev git libcap-dev libcanberra-gtk-module/stable python-notify python-notify2 libmessaging-menu-dev build-essential --reinstall && git clone https://github.com/Bitmessage/PyBitmessage $HOME/PyBitmessage && cd ~/PyBitmessage && python $HOME/PyBitmessage/checkdeps.py
-```
-## Step 9) 
-Below is a one-liner to:
 Install bitmessage as a user
 Add the PyBitmessage directory to your $PATH 
 Create a simple bash script that updates PyBitmessage & starts PyBitmessage everytime you open it.
 Name the generated bitmessage script to "_bitmessage_", 
 Make the generated bitmessage script executable (chmod a+x) 
 Add the installed PyBitmessage binary directory ($HOME/.local/bin} to your $PATH. 
-
 ```
-python $HOME/PyBitmessage/setup.py install --user && export PATH="${PATH:+${PATH}:}~/.local/bin" && source ~/.profile && echo '#!/bin/bash' | cat >> $HOME/.local/bin/bitmessage && echo "# This is an automatically generated script to update and start bitmessage when you type the word "bitmessage" on the command line" | cat >> $HOME/.local/bin/bitmessage && echo "export TMPHOME=$PWD" | cat >> $HOME/.local/bin/bitmessage && echo "cd $HOME/PyBitmessage/ && git pull" | cat >> $HOME/.local/bin/bitmessage && echo "cd $TMPHOME" | cat >> $HOME/.local/bin/bitmessage && echo "$HOME/.local/bin/PyBitmessage" | cat >> $HOME/.local/bin/bitmessage && chmod a+x $HOME/.local/bin/bitmessage
+cd $HOME && sudo apt update && sudo apt install -y apt-file && sudo apt-file update && sudo apt install -y python python-pip/stable python-msgpack python-qt4 python-pyopencl python-setuptools python-prctl openssl libssl-dev git libcap-dev libcanberra-gtk-module/stable python-notify python-notify2 libmessaging-menu-dev build-essential --reinstall && git clone https://github.com/Bitmessage/PyBitmessage $HOME/PyBitmessage && cd ~/PyBitmessage && python $HOME/PyBitmessage/checkdeps.py && python $HOME/PyBitmessage/setup.py install --user && export PATH="${PATH:+${PATH}:}~/.local/bin" && source ~/.profile && echo '#!/bin/bash' | cat >> $HOME/.local/bin/bitmessage && echo "# This is an automatically generated script to update and start bitmessage when you type the word "bitmessage" on the command line" | cat >> $HOME/.local/bin/bitmessage && echo "export TMPHOME=$PWD" | cat >> $HOME/.local/bin/bitmessage && echo "cd $HOME/PyBitmessage/ && git pull" | cat >> $HOME/.local/bin/bitmessage && echo "cd $TMPHOME" | cat >> $HOME/.local/bin/bitmessage && echo "$HOME/.local/bin/PyBitmessage" | cat >> $HOME/.local/bin/bitmessage && chmod a+x $HOME/.local/bin/bitmessage
 ```
 ## Step 10)
 Activate bitmessage 
