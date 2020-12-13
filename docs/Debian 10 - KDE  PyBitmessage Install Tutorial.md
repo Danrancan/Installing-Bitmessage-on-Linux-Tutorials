@@ -7,28 +7,21 @@ This tutorial will help you properly install [PyBitmessage](https://github.com/B
 
 ## Step 1
 
-Install your dependancies, as well as "apt-file" (for the apt-file search command), incase you need to find some extra packages.
+Install all necessary [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) dependancies, as well as [apt-file](https://packages.debian.org/buster/apt-file) (for the ```sudo apt-file search``` command), incase you need to find some extra packages.
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+sudo apt update && sudo apt install -y apt-file && sudo apt-file update && sudo apt install -y python python-pip/stable python-msgpack python-qt4 python-pyopencl python-setuptools python-prctl openssl libssl-dev git libcap-dev libcanberra-gtk-module/stable python-notify python-notify2 libmessaging-menu-dev --reinstall
 ```
-
-### Step 2
-Clone the official PyBitmessage repository, and move into that directory, then check if you still have any missing dependancies.
+## Step 2
+Clone the Official Bitmessage Repo to your home directory (or whatever directory you want to store your bitmessage repo in).
+```
+git clone https://github.com/Bitmessage/PyBitmessage $HOME/PyBitmessage
+```
+## Step 3
+Verify that you have all the required dependencies.
+```
+python $HOME/PyBitmessage/checkdeps.py
+```
 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
@@ -62,3 +55,21 @@ python $HOME/PyBitmessage/setup.py install --user && export PATH="${PATH:+${PATH
 bitmessage
 
 # Now bitmessage should be up and running. All done.
+
+```markdown
+Syntax highlighted code block
+
+# Header 1
+## Header 2
+### Header 3
+
+- Bulleted
+- List
+
+1. Numbered
+2. List
+
+**Bold** and _Italic_ and `Code` text
+
+[Link](url) and ![Image](src)
+```
