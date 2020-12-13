@@ -3,8 +3,8 @@
 
 This tutorial will help you properly install [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) with all dependencies on a cleanly installed Debian 10 KDE distribution. It requires the use of your terminal application. First read the instructions for each step, then copy and paste each command below the instructions into your terminal and press enter.
 
-### Step 1-7 = The Long Way
-### Step 8-10 = The Short Way
+#### 1-7 "The Long Way" 
+#### (Skip to step 8-10 for "The Short Way")
 
 ## Step 1
 
@@ -57,4 +57,6 @@ Start bitmessage and enjoy!
 bitmessage
 ```
 ## Done!
+
+##### "The Short Way"
 
