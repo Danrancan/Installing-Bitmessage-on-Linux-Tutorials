@@ -59,4 +59,47 @@ bitmessage
 ## Done!
 
 ##### "The Short Way"
+# Installing Bitmessage and all dependencies on a Debian 10 KDE clean install
+# Copy and paste the uncommented (indicated by a line that doesnt start with #) commands into your terminal.
+
+## Step 8)
+Below is a one-liner to:
+Go to your home folder home folder
+Install apt-file (incase you need to find some extra packages)
+Install your dependancies 
+Clone the official PyBitmessage repository
+Move into the PyBitmessage cloned directory
+Check if you still have any missing dependancies.
+```
+cd $HOME && sudo apt update && sudo apt install -y apt-file && sudo apt-file update && sudo apt install -y python python-pip/stable python-msgpack python-qt4 python-pyopencl python-setuptools python-prctl openssl libssl-dev git libcap-dev libcanberra-gtk-module/stable python-notify python-notify2 libmessaging-menu-dev build-essential --reinstall && git clone https://github.com/Bitmessage/PyBitmessage $HOME/PyBitmessage && cd ~/PyBitmessage && python $HOME/PyBitmessage/checkdeps.py
+```
+## Step 9) 
+Below is a one-liner to:
+Install bitmessage as a user
+Add the PyBitmessage directory to your $PATH 
+Create a simple bash script that updates PyBitmessage & starts PyBitmessage everytime you open it.
+Name the generated bitmessage script to "_bitmessage_", 
+Make the generated bitmessage script executable (chmod a+x) 
+Add the installed PyBitmessage binary directory ($HOME/.local/bin} to your $PATH. 
+
+```
+python $HOME/PyBitmessage/setup.py install --user && export PATH="${PATH:+${PATH}:}~/.local/bin" && source ~/.profile && echo '#!/bin/bash' | cat >> $HOME/.local/bin/bitmessage && echo "# This is an automatically generated script to update and start bitmessage when you type the word "bitmessage" on the command line" | cat >> $HOME/.local/bin/bitmessage && echo "export TMPHOME=$PWD" | cat >> $HOME/.local/bin/bitmessage && echo "cd $HOME/PyBitmessage/ && git pull" | cat >> $HOME/.local/bin/bitmessage && echo "cd $TMPHOME" | cat >> $HOME/.local/bin/bitmessage && echo "$HOME/.local/bin/PyBitmessage" | cat >> $HOME/.local/bin/bitmessage && chmod a+x $HOME/.local/bin/bitmessage
+```
+## Step 10)
+Activate bitmessage 
+```
+bitmessage
+```
+## Final Step
+Bitmessage should start up and run.
+Check that the only warnings you get are the ones listed below.
+Contact developers if you want to play around with namecoin. I know nothing about it.
+```
+2020-12-13 10:40:05,136 - WARNING - Using default logger configuration
+2020-12-13 10:40:05,545 - WARNING - /home/boo/.namecoin/namecoin.conf unreadable or missing, Namecoin support deactivated
+2020-12-13 10:40:05,546 - WARNING - There was a problem testing for a Namecoin daemon. Hiding the Fetch Namecoin ID button
+```
+If you get other warnings. Find the missing dependencies.
+
+## All done.
 
