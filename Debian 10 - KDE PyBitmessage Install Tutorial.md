@@ -55,7 +55,7 @@ sudo apt update && sudo apt install -y apt-file && sudo apt-file update && sudo 
 #### Step 2 (The Long Way)
 Clone the Official Bitmessage Repo to your home directory (or whatever directory you want to store your bitmessage repo in).
 ```
-git clone https://github.com/Bitmessage/$HOME/PyBitmessage
+git clone https://github.com/Bitmessage/PyBitmessage.git $HOME/PyBitmessage
 ```
 #### Step 3 (The Long Way)
 Move into your cloned [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) directory, and verify that you have all the required dependencies.
