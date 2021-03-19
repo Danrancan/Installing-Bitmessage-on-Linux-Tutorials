@@ -17,7 +17,7 @@
 
 ### Step 4 (The Long Way)
 ###### Install bitmessage as a user so you dont need, and it doesn't use root permissions. It is more secure this way.
-`setup.py install --user`
+`python setup.py install --user`
 
 ### Step 5 (The Long Way)
 ###### Add the PyBitmessage directory to your $PATH and source ~/.profile
