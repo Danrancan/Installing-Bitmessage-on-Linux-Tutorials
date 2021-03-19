@@ -4,7 +4,7 @@
 
 ###### Install all necessary PyBitmessage dependancies, as well as apt-file (for the sudo apt-file search command, incase you need to find some extra packages) by copying and pasting the below command into your terminal...
 
-`sudo apt update && sudo apt upgrade && sudo apt install -y apt-file && sudo apt-file update && sudo apt-get install -y python-pyopencl python-msgpack python-setuptools python-qt4 git libssl-dev libcap-dev python-prctl build-essential python-notify2 --reinstall`
+`sudo apt update && sudo apt upgrade && sudo apt install -y apt-file && sudo apt-file update && sudo apt-get install -y python-pyopencl python-msgpack python-setuptools python-qt4 git libssl-dev libcap-dev python-prctl build-essential python-notify2 libmessaging-menu-dev --reinstall`
 
 ### STEP 2: (The Long Way)
 `git clone https://github.com/Bitmessage/PyBitmessage.git $HOME/PyBitmessage`
