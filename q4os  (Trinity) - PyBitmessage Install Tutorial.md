@@ -24,5 +24,6 @@
 `export PATH="${PATH:+${PATH}:}~/.local/bin" && source ~/.profile`
 
 ### Step 6 (The Long Way)
-###### Create a bash script that starts PyBitmessage with the command "bitmessage" automatically and checks for updates before load time
-`echo '#!/bin/bash' | cat >> $HOME/.local/bin/bitmessage && echo "# This is an automatically generated script to update and start bitmessage when you type the word "bitmessage" on the command line" | cat >> $HOME/.local/bin/bitmessage && echo "export TMPHOME=$PWD" | cat >> $HOME/.local/bin/bitmessage && echo "cd $HOME/PyBitmessage/ && git pull" | cat >> $HOME/.local/bin/bitmessage && echo "cd $TMPHOME" | cat >> $HOME/.local/bin/bitmessage && echo "$HOME/.local/bin/pybitmessage" | cat >> $HOME/.local/bin/bitmessage`
+###### Either type `pybitmessage` in your terminal to launch, or launch pybitmessage from your applications menue.
+
+ALL DONE!
