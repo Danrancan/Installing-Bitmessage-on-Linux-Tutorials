@@ -1,4 +1,4 @@
-# Properly Installing Bitmessage on Debian 10 KDE
+# Debian 10 KDE - PyBitmessage Installation
 ##### A tutorial provided by [Nerd-Tech.net](https://www.nerd-tech.net) and [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) contributors.
 
 This tutorial will help you properly install [PyBitmessage](https://github.com/Bitmessage/PyBitmessage) with all dependencies on a cleanly installed Debian 10 KDE distribution. It requires the use of your terminal application. First read the instructions for each step, then copy and paste each command below the instructions into your terminal and press enter.
